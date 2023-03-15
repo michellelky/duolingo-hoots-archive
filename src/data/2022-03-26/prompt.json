@@ -1,0 +1,71 @@
+{
+  "promptId": 1091,
+  "promptText": {
+    "text": "{Quelles/What} {sont/are} {tes/your} {bonnes/good} {habitudes/habits} ?"
+  },
+  "promptDate": { "date": 26, "month": 3, "year": 2022 },
+  "promptTTSUrl": "https://d1vq87e9lcf771.cloudfront.net/danielle/758720666b7a08db9f3f9759a6001f81",
+  "userHasCommentedBefore": true,
+  "responses": {
+    "byId": {
+      "character-post-3370": {
+        "id": 3370,
+        "type": "duolingoCharacter",
+        "userId": 4,
+        "responseText": {
+          "text": "{Je/I} {prends/take} {toujours/always} {soin/care} {de/of} {mon/my} {apparence/appearance}. {Par exemple/For example}, {je/I} {brosse/brush} {ma/my} {moustache/moustache} {au moins/at least} {3 fois/three times} {par jour/day}. {Elle/It} {doit/must} {être/be} {parfaite/perfect}."
+        },
+        "ttsUrl": "https://d1vq87e9lcf771.cloudfront.net/victor/d9f8bdf7c1ceeaa3148f137fa8d03bbe"
+      },
+      "character-post-3366": {
+        "id": 3366,
+        "type": "duolingoCharacter",
+        "userId": 5,
+        "responseText": {
+          "text": "{Tous les jours/Every day}, {je fais/I do} {une heure/an hour} {de yoga/yoga} {et/and} {de méditation/meditation}."
+        },
+        "ttsUrl": "https://d1vq87e9lcf771.cloudfront.net/danielle/e453e782fec071c3f34137ee1dd8b3ec"
+      },
+      "character-post-3368": {
+        "id": 3368,
+        "type": "duolingoCharacter",
+        "userId": 8,
+        "responseText": {
+          "text": "{Je/I} {dors/sleep} {beaucoup/a lot} ({au minimum/at least} {10 heures/hours} {par nuit/per night}) {et/and} {je ne suis/I am not} {jamais/never} {stressée/stressed}."
+        },
+        "ttsUrl": "https://d1vq87e9lcf771.cloudfront.net/danielle/ecad2b5bbced3140723b38f38e83c7bb"
+      }
+    },
+    "promptResponseIds": [
+      "character-post-3370",
+      "character-post-3366",
+      "character-post-3368"
+    ]
+  },
+  "users": {
+    "byId": {
+      "character-4": {
+        "username": "Oscar",
+        "name": "Oscar",
+        "picture": "/images/avatars/oscar.svg",
+        "privacySettings": []
+      },
+      "character-5": {
+        "username": "Lucy",
+        "name": "Lucy",
+        "picture": "/images/avatars/lucy.svg",
+        "privacySettings": []
+      },
+      "character-8": {
+        "username": "Lin",
+        "name": "Lin",
+        "picture": "/images/avatars/lin.svg",
+        "privacySettings": []
+      }
+    }
+  },
+  "promptActive": true,
+  "characterAvatar": "/images/avatars/lily.svg",
+  "starterPhrases": ["Tous les jours", "Je fais"],
+  "xpToBeAwarded": 10
+}

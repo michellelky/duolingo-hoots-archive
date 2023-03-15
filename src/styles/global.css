@@ -1,0 +1,51 @@
+@font-face {
+  font-display: swap;
+  font-family: din-round;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/public/fonts/DINNextRoundedLTPro-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: din-round;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/public/fonts/DINNextRoundedLTPro-Bold.woff2") format("woff2");
+}
+
+body {
+  font-family: "din-round", "sans-serif";
+  background: rgb(255, 255, 255);
+  /* remove scoll bounce */
+  overscroll-behavior: none;
+}
+
+.scroll-section {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 220px);
+  margin: 0 auto;
+}
+
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #3c3c3c;
+  --text-bg-primary: #f4f4f4;
+  --text-secondary: #777777;
+  --text-highlight: #ffc800;
+  --border: #e5e5e5;
+  --accent: #58cc02;
+  --button-bg: #58cc02;
+  --button-bg-hover: #89e219;
+  --button-border: #58a700;
+  --button-bg-disabled: #b6b6b6;
+  --button-border-disabled: #7e7e7e;
+  --button-text: #ffffff;
+  --button-secondary-text: #9c9c9c;
+  --info-bg: #fff5d3;
+  --info-text: #cd7900;
+  --success-bg: #e2fdba;
+  --success-text: #58a700;
+  --error-bg: #ff9600;
+  --error-text: #cd7900;
+}
