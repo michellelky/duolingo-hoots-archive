@@ -50,14 +50,14 @@ export const DayText = styled.div`
 `;
 
 export const ListItemButton = styled(Link)<{
-  bgColor?: string;
-  borderColor?: string;
+  bgcolor?: string;
+  bordercolor?: string;
 }>`
   cursor: pointer;
-  background-color: ${({ bgColor }) => `#${bgColor}` || "rgb(16, 166, 107)"};
+  background-color: ${({ bgcolor }) => `#${bgcolor}` || "rgb(16, 166, 107)"};
   border: 0;
-  border-bottom: ${({ borderColor }) =>
-    `4px solid #${borderColor}` || `4px solid rgb(10, 114, 73)`};
+  border-bottom: ${({ bordercolor }) =>
+    `4px solid #${bordercolor}` || `4px solid rgb(10, 114, 73)`};
   border-radius: 16px;
   padding: 30px 24px;
   position: relative;

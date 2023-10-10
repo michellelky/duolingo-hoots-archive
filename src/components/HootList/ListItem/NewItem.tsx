@@ -15,8 +15,8 @@ export default function HootListItem({
       <Date date={dateObj} />
 
       <S.ListItemButton
-        bgColor={character.backgroundColor}
-        borderColor={character.lipColor}
+        bgcolor={character.backgroundColor}
+        bordercolor={character.lipColor}
         to={`session/${dateObj.toLocaleDateString("en-CA")}`}
       >
         <S.ContentItem>
