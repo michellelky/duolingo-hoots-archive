@@ -6,6 +6,7 @@ export interface HootListItemProps {
   id: number;
   dateObj: Date;
   question: string;
+  translation: string;
   character: {
     id: number;
     gender: string;

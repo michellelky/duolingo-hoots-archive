@@ -211,7 +211,7 @@ export default function HootSession() {
           setUserStep((prev) => prev + 1);
         }, 1500);
       } else if (userStep === STEPS.END + 2) {
-        navigate("/", { replace: true });
+        navigate(-1);
       } else {
         setUserStep((prev) => prev + 1);
         scrollToBottom();
@@ -229,7 +229,11 @@ export default function HootSession() {
     return (
       <AbsView>
         <BaseView>
-          <ProgressBar current={userResponse.length} finish={MIN_COUNT} />
+          <ProgressBar
+            current={userResponse.length}
+            finish={MIN_COUNT}
+            onClose={() => navigate(-1)}
+          />
           <Layout>
             <div>
               <Section>

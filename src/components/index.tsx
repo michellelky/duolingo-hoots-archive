@@ -1,5 +1,6 @@
 import Button from "./Button";
 import Bottom from "./Bottom";
+import Checkbox from "./Checkbox";
 import ProgressBar from "./ProgressBar";
 import Status from "./Status";
 import { Layout, Section, AbsView, BaseView } from "./View";
@@ -13,4 +14,5 @@ export {
   Bottom,
   ProgressBar,
   Status,
+  Checkbox,
 };

@@ -36,3 +36,8 @@ export const Progress = styled.div<{ percent: number }>`
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
 `;
+
+export const Button = styled.button`
+  border: none;
+  cursor: pointer;
+`;

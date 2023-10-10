@@ -6,6 +6,7 @@ import Date from "./Date";
 export default function HootListItem({
   dateObj,
   question,
+  translation,
   character,
   characterImg,
   isToday,
@@ -28,7 +29,7 @@ export default function HootListItem({
               <S.Description>Missed</S.Description>
             </S.Row>
           )}
-          <S.Title>{question}</S.Title>
+          <S.Title>{isToday ? translation : question}</S.Title>
         </S.ContentItem>
 
         <CharacterImage src={characterImg} alt={character.name} />

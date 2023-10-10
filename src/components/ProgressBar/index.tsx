@@ -1,14 +1,18 @@
 // init 1/3, fill bar when meet min characters
-import { Link } from "react-router-dom";
 
 import * as S from "./style";
 
 interface ProgressBarProps {
   current: number;
   finish: number;
+  onClose?: () => void;
 }
 
-export default function ProgressBar({ current, finish }: ProgressBarProps) {
+export default function ProgressBar({
+  current,
+  finish,
+  onClose,
+}: ProgressBarProps) {
   const getPercentage = () => {
     const total = 100;
     const init = total - finish;
@@ -19,11 +23,12 @@ export default function ProgressBar({ current, finish }: ProgressBarProps) {
     }
     return total;
   };
+
   return (
     <S.Row>
-      <Link to="/">
-        <img src={`/images/mobile-close-button.svg`} alt="close"/>
-      </Link>
+      <S.Button onClick={onClose}>
+        <img src={`/images/mobile-close-button.svg`} alt="close" />
+      </S.Button>
       <S.BaseBar>
         <S.Progress percent={getPercentage()} />
       </S.BaseBar>

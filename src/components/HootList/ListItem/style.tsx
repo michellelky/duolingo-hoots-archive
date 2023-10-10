@@ -90,7 +90,7 @@ export const CompletedListItem = styled.div`
   max-width: 100%;
   overflow: hidden;
   color: #cd7900;
-  /* pointer-events: none; */
+  pointer-events: none;
 
   @media (max-width: 660px) {
     width: 100%;
