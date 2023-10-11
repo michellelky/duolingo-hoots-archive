@@ -4,7 +4,6 @@ export const TextArea = styled.textarea`
   font-size: 18px;
   line-height: 1.5;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
   border: 2px solid var(--border);
   border-radius: 12px;
   background-color: var(--text-bg-primary);

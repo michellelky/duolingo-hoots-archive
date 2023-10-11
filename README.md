@@ -45,7 +45,7 @@ All assets are by Duolingo.
 
 ## Todo Ideas
 
-- [ ] Audio
-- [ ] Status filter
+- [x] Audio
+- [x] Status filter
 - [ ] SVG animation
 - [ ] Hover tooltip

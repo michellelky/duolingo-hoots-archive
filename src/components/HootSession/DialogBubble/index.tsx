@@ -6,6 +6,7 @@ interface DialogBubbleProps {
   avatar: string;
   audioUrl: string;
   visible?: boolean;
+  active?: boolean;
   play?: () => void;
 }
 
@@ -14,6 +15,7 @@ export default function DialogBubble({
   avatar,
   audioUrl,
   visible,
+  active = false,
   play,
 }: DialogBubbleProps) {
   return (
@@ -22,7 +24,7 @@ export default function DialogBubble({
         <S.Avatar src={avatar} />
 
         <S.Bubble>
-          {!!audioUrl && <AudioButton src={audioUrl} active onClick={play} />}
+          {!!audioUrl && <AudioButton active={active} onClick={play} />}
           <S.BubbleContent>{text}</S.BubbleContent>
         </S.Bubble>
       </S.DialogContainer>

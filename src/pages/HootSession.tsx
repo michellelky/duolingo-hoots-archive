@@ -20,6 +20,7 @@ import {
   Spacer,
   FinishBlock,
 } from "../components/HootSession";
+import useSound from "../hooks/useSound";
 
 const MIN_COUNT = 70;
 const MAX_COUNT = 130;
@@ -60,6 +61,14 @@ export default function HootSession() {
   const [userStep, setUserStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmited, setIsSubmited] = useState(false);
+
+  // Autoplay after user interaction
+  const autoplay = userStep > 1 && userStep < exampleResponses.length + 2;
+
+  const [currentTrack, setCurrentTrack] = useState({ url: "", localSrc: "" });
+  const { isPlaying, play } = useSound(currentTrack.localSrc, {
+    autoplay,
+  });
 
   const STEPS = {
     START: 1,
@@ -126,6 +135,10 @@ export default function HootSession() {
             characterAvatar: data.characterAvatar,
             promptTTSUrl: data.promptTTSUrl,
           });
+          setCurrentTrack({
+            localSrc: getFilePath(data.promptTTSUrl),
+            url: data.promptTTSUrl,
+          });
 
           const examples = parseExample(data.responses, data.users);
           setExResponse(examples);
@@ -141,11 +154,34 @@ export default function HootSession() {
   }, [params]);
 
   useEffect(() => {
+    // Congrats sound
     if (userStep === STEPS.END + 2) {
       const audio = new Audio("/audio/2aae0ea735c8e9ed884107d6f0a09e35.mp3");
       audio.play();
     }
   }, [STEPS.END, userStep]);
+
+  useEffect(() => {
+    if (autoplay) {
+      const res = exampleResponses[userStep - 2];
+      setCurrentTrack({ localSrc: getFilePath(res.ttsUrl), url: res.ttsUrl });
+    }
+  }, [autoplay, exampleResponses, userStep]);
+
+  const getFilePath = (url: string) => {
+    const filename = url.substring(url.lastIndexOf("/") + 1);
+    return `/audio/${filename}.mp3`;
+  };
+
+  const setAudio = (link: string) => {
+    const source = getFilePath(link);
+
+    if (source !== currentTrack.localSrc) {
+      setCurrentTrack({ localSrc: source, url: link });
+    } else {
+      play();
+    }
+  };
 
   const getBottomStatus: () => ComponentType[] = () => {
     if (userStep === STEPS.END - 1) {
@@ -235,62 +271,64 @@ export default function HootSession() {
             onClose={() => navigate(-1)}
           />
           <Layout>
-            <div>
-              <Section>
-                <Heading>Today's prompt</Heading>
+            <Section>
+              <Heading>Today's prompt</Heading>
+              <DialogBubble
+                text={prompt.question}
+                avatar={prompt.characterAvatar}
+                audioUrl={prompt.promptTTSUrl}
+                play={() => setAudio(prompt.promptTTSUrl)}
+                active={isPlaying && currentTrack.url === prompt.promptTTSUrl}
+              />
+            </Section>
+
+            <Section visible={exampleResponses.length !== 0 && userStep > 1}>
+              <Heading>Example responses</Heading>
+              {exampleResponses.map((e, i) => (
                 <DialogBubble
-                  text={prompt.question}
-                  avatar={prompt.characterAvatar}
-                  audioUrl={prompt.promptTTSUrl}
+                  key={e.id}
+                  text={e.text}
+                  avatar={e.avatar}
+                  audioUrl={e.ttsUrl}
+                  visible={userStep - 2 >= i}
+                  play={() => setAudio(e.ttsUrl)}
+                  active={isPlaying && currentTrack.url === e.ttsUrl}
                 />
-              </Section>
+              ))}
+            </Section>
 
-              <Section visible={exampleResponses.length !== 0 && userStep > 1}>
-                <Heading>Example responses</Heading>
-                {exampleResponses.map((e, i) => (
-                  <DialogBubble
-                    key={e.id}
-                    text={e.text}
-                    avatar={e.avatar}
-                    audioUrl={e.ttsUrl}
-                    visible={userStep - 2 >= i}
-                  />
-                ))}
-              </Section>
+            <Section
+              visible={
+                exampleResponses.length !== 0
+                  ? userStep > exampleResponses.length + 1
+                  : userStep === 2
+              }
+            >
+              <Heading>
+                {userStep === exampleResponses.length + 2
+                  ? "Your turn to respond!"
+                  : "Review your corrections"}
+              </Heading>
+              <Body>{prompt.question}</Body>
+              <HootInput
+                value={userResponse}
+                onTextChange={(val) => setUserResponse(val)}
+                wordCount={userResponse.length}
+                min={MIN_COUNT}
+                max={MAX_COUNT}
+                editable={userStep < STEPS.END}
+              />
+            </Section>
 
-              <Section
-                visible={
-                  exampleResponses.length !== 0
-                    ? userStep > exampleResponses.length + 1
-                    : userStep === 2
-                }
-              >
-                <Heading>
-                  {userStep === exampleResponses.length + 2
-                    ? "Your turn to respond!"
-                    : "Review your corrections"}
-                </Heading>
-                <Body>{prompt.question}</Body>
-                <HootInput
-                  value={userResponse}
-                  onTextChange={(val) => setUserResponse(val)}
-                  wordCount={userResponse.length}
-                  min={MIN_COUNT}
-                  max={MAX_COUNT}
-                  editable={userStep < STEPS.END}
-                />
-              </Section>
+            <Section visible={userStep === STEPS.END + 2}>
+              <FinishBlock
+                title="You’ve reached your daily goal"
+                subtitle="Prompt Complete!"
+                xp={10}
+              />
+            </Section>
 
-              <Section visible={userStep === STEPS.END + 2}>
-                <FinishBlock
-                  title="You’ve reached your daily goal"
-                  subtitle="Prompt Complete!"
-                  xp={10}
-                />
-              </Section>
-
-              <Spacer visible={userStep !== STEPS.END + 2} />
-            </div>
+            <Spacer visible={userStep !== STEPS.END + 2} />
           </Layout>
 
           <Bottom success={isSubmited && userStep === STEPS.END + 1}>
