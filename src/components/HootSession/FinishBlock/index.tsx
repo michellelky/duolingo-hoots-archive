@@ -9,7 +9,7 @@ interface FinishBlockProps {
 export default function FinishBlock({ title, subtitle, xp }: FinishBlockProps) {
   return (
     <S.Fullscreen>
-      <S.Img src={`/images/chest-open.svg`} alt="chest" />
+      <S.Img src={`images/chest-open.svg`} alt="chest" />
       <S.Title>{title}</S.Title>
       {xp && (
         <S.Row>

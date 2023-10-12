@@ -47,25 +47,25 @@
       "character-0": {
         "username": "Lily",
         "name": "Lily",
-        "picture": "/images/avatars/lily.svg",
+        "picture": "images/avatars/lily.svg",
         "privacySettings": []
       },
       "character-3": {
         "username": "Eddy",
         "name": "Eddy",
-        "picture": "/images/avatars/eddy.svg",
+        "picture": "images/avatars/eddy.svg",
         "privacySettings": []
       },
       "character-7": {
         "username": "Bea",
         "name": "Bea",
-        "picture": "/images/avatars/bea.svg",
+        "picture": "images/avatars/bea.svg",
         "privacySettings": []
       }
     }
   },
   "promptActive": true,
-  "characterAvatar": "/images/avatars/oscar.svg",
+  "characterAvatar": "images/avatars/oscar.svg",
   "starterPhrases": ["Je voudrais", "J'aimerais"],
   "xpToBeAwarded": 10
 }

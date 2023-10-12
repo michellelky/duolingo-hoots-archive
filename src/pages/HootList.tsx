@@ -46,7 +46,7 @@ export default function HootIndex() {
     } else {
       filename += "-active";
     }
-    return `/images/prompt-characters/${filename}.svg`;
+    return `images/prompt-characters/${filename}.svg`;
   };
 
   const getDate = (dateObj: { date: number; month: number; year: number }) => {

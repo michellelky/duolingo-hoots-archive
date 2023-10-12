@@ -26,6 +26,39 @@ npm start
 ```
 The app will be running at [http://localhost:3000](http://localhost:3000)
 
+### Root relative path & Github Pages
+
+To deploy with `gh-pages`, a "homepage" is added in package.json which causes a change in root path with your repo name (https://{username}.github.io/{repo}). To handle this:
+
+1. Add `basename` to Router (See [Building for Relative Paths](https://create-react-app.dev/docs/deployment/#building-for-relative-paths))
+
+2. Update assets path
+
+- Import without absolute path
+```js
+// ❌ Absolute path starting at root
+// https://username.github.io/images/file.jpg
+src={`/images/file.jpg`}
+
+// ✅ Relative path
+// https://username.github.io/repo/images/file.jpg
+src={`images/file.jpg`}
+```
+
+- Update `PUBLIC_URL` to match repo
+
+`PUBLIC_URL` is used to reference your public folder. When run locally, `public` folder will point to http://localhost:3000/{repo} as a result of "homepage". Fix public asset links by:
+
+Setting variable in script
+```sh
+PUBLIC_URL=/ npm run start
+```
+
+Or, creating a `.env` file
+```
+PUBLIC_URL=/
+```
+
 ## 📝 Data Source
 
 [Prompts data](src/data/prompts.json) were extracted from Hoots API i.e.

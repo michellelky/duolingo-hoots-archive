@@ -156,7 +156,7 @@ export default function HootSession() {
   useEffect(() => {
     // Congrats sound
     if (userStep === STEPS.END + 2) {
-      const audio = new Audio("/audio/2aae0ea735c8e9ed884107d6f0a09e35.mp3");
+      const audio = new Audio("audio/2aae0ea735c8e9ed884107d6f0a09e35.mp3");
       audio.play();
     }
   }, [STEPS.END, userStep]);
@@ -170,7 +170,7 @@ export default function HootSession() {
 
   const getFilePath = (url: string) => {
     const filename = url.substring(url.lastIndexOf("/") + 1);
-    return `/audio/${filename}.mp3`;
+    return `audio/${filename}.mp3`;
   };
 
   const setAudio = (link: string) => {

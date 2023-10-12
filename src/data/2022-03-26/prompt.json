@@ -47,25 +47,25 @@
       "character-4": {
         "username": "Oscar",
         "name": "Oscar",
-        "picture": "/images/avatars/oscar.svg",
+        "picture": "images/avatars/oscar.svg",
         "privacySettings": []
       },
       "character-5": {
         "username": "Lucy",
         "name": "Lucy",
-        "picture": "/images/avatars/lucy.svg",
+        "picture": "images/avatars/lucy.svg",
         "privacySettings": []
       },
       "character-8": {
         "username": "Lin",
         "name": "Lin",
-        "picture": "/images/avatars/lin.svg",
+        "picture": "images/avatars/lin.svg",
         "privacySettings": []
       }
     }
   },
   "promptActive": true,
-  "characterAvatar": "/images/avatars/lily.svg",
+  "characterAvatar": "images/avatars/lily.svg",
   "starterPhrases": ["Tous les jours", "Je fais"],
   "xpToBeAwarded": 10
 }

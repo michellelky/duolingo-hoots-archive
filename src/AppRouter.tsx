@@ -4,7 +4,7 @@ import HootSession from "./pages/HootSession";
 
 export default function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route index element={<HootList />} />
         <Route path="session" element={<HootSession />}>

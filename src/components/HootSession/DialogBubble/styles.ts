@@ -26,7 +26,7 @@ export const Bubble = styled.div`
   height: fit-content;
 
   :after {
-    background-image: url("/images/speech-bubble-arrow.svg");
+    background-image: url("images/speech-bubble-arrow.svg");
     content: "";
     height: 19px;
     left: -18px;

@@ -25,7 +25,7 @@ export default function HootListItem({
             <S.Description>Today's Prompt</S.Description>
           ) : (
             <S.Row>
-              <S.StatusIcon src={`/images/missed_cross.svg`} alt="missed" />
+              <S.StatusIcon src={`images/missed_cross.svg`} alt="missed" />
               <S.Description>Missed</S.Description>
             </S.Row>
           )}
