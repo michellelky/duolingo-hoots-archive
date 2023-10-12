@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/duolingo-hoots-archive/static/css/main.6a80d20e.css",
-    "main.js": "/duolingo-hoots-archive/static/js/main.1ab8d656.js",
-    "static/js/538.79caadda.chunk.js": "/duolingo-hoots-archive/static/js/538.79caadda.chunk.js",
-    "static/js/826.b2fed007.chunk.js": "/duolingo-hoots-archive/static/js/826.b2fed007.chunk.js",
-    "static/js/912.32596571.chunk.js": "/duolingo-hoots-archive/static/js/912.32596571.chunk.js",
-    "static/js/992.efd76c61.chunk.js": "/duolingo-hoots-archive/static/js/992.efd76c61.chunk.js",
-    "static/js/787.389723bb.chunk.js": "/duolingo-hoots-archive/static/js/787.389723bb.chunk.js",
-    "static/media/DINNextRoundedLTPro-Bold.woff2": "/duolingo-hoots-archive/static/media/DINNextRoundedLTPro-Bold.fddf2189853baef1417d.woff2",
-    "static/media/DINNextRoundedLTPro-Regular.woff2": "/duolingo-hoots-archive/static/media/DINNextRoundedLTPro-Regular.d20aa4f114739467c5c1.woff2",
-    "index.html": "/duolingo-hoots-archive/index.html",
-    "main.6a80d20e.css.map": "/duolingo-hoots-archive/static/css/main.6a80d20e.css.map",
-    "main.1ab8d656.js.map": "/duolingo-hoots-archive/static/js/main.1ab8d656.js.map",
-    "787.389723bb.chunk.js.map": "/duolingo-hoots-archive/static/js/787.389723bb.chunk.js.map"
+    "main.css": "/static/css/main.52c198c5.css",
+    "main.js": "/static/js/main.ea074a66.js",
+    "static/js/538.79caadda.chunk.js": "/static/js/538.79caadda.chunk.js",
+    "static/js/826.b2fed007.chunk.js": "/static/js/826.b2fed007.chunk.js",
+    "static/js/912.32596571.chunk.js": "/static/js/912.32596571.chunk.js",
+    "static/js/992.efd76c61.chunk.js": "/static/js/992.efd76c61.chunk.js",
+    "static/js/787.389723bb.chunk.js": "/static/js/787.389723bb.chunk.js",
+    "static/media/DINNextRoundedLTPro-Bold.woff2": "/static/media/DINNextRoundedLTPro-Bold.fddf2189853baef1417d.woff2",
+    "static/media/DINNextRoundedLTPro-Regular.woff2": "/static/media/DINNextRoundedLTPro-Regular.d20aa4f114739467c5c1.woff2",
+    "index.html": "/index.html",
+    "main.52c198c5.css.map": "/static/css/main.52c198c5.css.map",
+    "main.ea074a66.js.map": "/static/js/main.ea074a66.js.map",
+    "787.389723bb.chunk.js.map": "/static/js/787.389723bb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a80d20e.css",
-    "static/js/main.1ab8d656.js"
+    "static/css/main.52c198c5.css",
+    "static/js/main.ea074a66.js"
   ]
 }
