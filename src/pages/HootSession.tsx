@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import {
@@ -62,18 +62,19 @@ export default function HootSession() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmited, setIsSubmited] = useState(false);
 
+  const STEPS = {
+    START: 1,
+    WRITE: exampleResponses.length + 2,
+    END: exampleResponses.length + 3,
+  };
+
   // Autoplay after user interaction
-  const autoplay = userStep > 1 && userStep < exampleResponses.length + 2;
+  const autoplay = userStep > 1 && userStep < STEPS.WRITE;
 
   const [currentTrack, setCurrentTrack] = useState({ url: "", localSrc: "" });
   const { isPlaying, play } = useSound(currentTrack.localSrc, {
     autoplay,
   });
-
-  const STEPS = {
-    START: 1,
-    END: exampleResponses.length + 3,
-  };
 
   useEffect(() => {
     const parseHint = (text: string) => {
@@ -238,30 +239,46 @@ export default function HootSession() {
     }, 300);
   };
 
-  const onClickBtn = (label?: string) => {
-    const onClickNext = () => {
-      if (userStep === STEPS.END) {
-        // simulate submit
-        setIsLoading(true);
-        setTimeout(() => {
-          setIsLoading(false);
-          setIsSubmited(true);
+  const onClickBtn = useCallback(
+    (label?: string) => {
+      const onClickNext = () => {
+        if (userStep === STEPS.END) {
+          // simulate submit
+          setIsLoading(true);
+          setTimeout(() => {
+            setIsLoading(false);
+            setIsSubmited(true);
+            setUserStep((prev) => prev + 1);
+          }, 1500);
+        } else if (userStep === STEPS.END + 2) {
+          navigate(-1);
+        } else {
           setUserStep((prev) => prev + 1);
-        }, 1500);
-      } else if (userStep === STEPS.END + 2) {
-        navigate(-1);
+          scrollToBottom();
+        }
+      };
+
+      if (label && label === "Edit") {
+        setUserStep((prev) => prev - 1);
       } else {
-        setUserStep((prev) => prev + 1);
-        scrollToBottom();
+        onClickNext();
+      }
+    },
+    [STEPS.END, navigate, userStep],
+  );
+
+  useEffect(() => {
+    const handleKeyboardEvent = (e: KeyboardEvent) => {
+      if (e.key === "Enter" && userStep < STEPS.WRITE) {
+        onClickBtn();
       }
     };
+    window.addEventListener("keydown", handleKeyboardEvent);
 
-    if (label && label === "Edit") {
-      setUserStep((prev) => prev - 1);
-    } else {
-      onClickNext();
-    }
-  };
+    return () => {
+      window.removeEventListener("keydown", handleKeyboardEvent);
+    };
+  }, [STEPS.WRITE, userStep, onClickBtn]);
 
   if (prompt.question !== "") {
     return (
@@ -302,12 +319,12 @@ export default function HootSession() {
             <Section
               visible={
                 exampleResponses.length !== 0
-                  ? userStep > exampleResponses.length + 1
+                  ? userStep === STEPS.WRITE
                   : userStep === 2
               }
             >
               <Heading>
-                {userStep === exampleResponses.length + 2
+                {userStep === STEPS.WRITE
                   ? "Your turn to respond!"
                   : "Review your corrections"}
               </Heading>
@@ -350,7 +367,7 @@ export default function HootSession() {
                   loading={isLoading}
                   disabled={
                     isLoading ||
-                    (userStep === 2 + exampleResponses.length &&
+                    (userStep === STEPS.WRITE &&
                       userResponse.length < MIN_COUNT)
                   }
                   variant={c.variant}
