@@ -24,6 +24,7 @@ export const Bubble = styled.div`
   display: flex;
   flex-direction: row;
   height: fit-content;
+  width: 100%;
 
   :after {
     background-image: url("images/speech-bubble-arrow.svg");

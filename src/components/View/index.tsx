@@ -30,6 +30,7 @@ export const BaseView = styled.div`
 `;
 
 export const Section = styled.div<{ visible?: boolean }>`
+  width: 100%;
   margin: 2rem 0;
   display: ${({ visible }) => (visible === false ? "none" : "block")};
 `;

@@ -39,5 +39,6 @@ export const Progress = styled.div<{ percent: number }>`
 
 export const Button = styled.button`
   border: none;
+  background: none;
   cursor: pointer;
 `;
