@@ -63,6 +63,7 @@ export const ListItemButton = styled(Link)<{
   position: relative;
   width: 500px;
   max-width: 100%;
+  min-height: 120px;
   overflow: hidden;
   color: #fff;
 

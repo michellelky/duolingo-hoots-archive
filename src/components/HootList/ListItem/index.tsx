@@ -18,14 +18,15 @@ export interface HootListItemProps {
   characterImg: string;
   completed: boolean;
   isToday: boolean;
+  isDemo: boolean;
 }
 
 export default function HootListItem(props: HootListItemProps) {
-  const { completed, isToday } = props;
+  const { completed, isToday, isDemo } = props;
   if (completed) {
     return <CompletedItem {...props} />;
   }
-  if (!isToday) {
+  if (!isToday && !isDemo) {
     return <MissedItem {...props} />;
   }
   return <NewItem {...props} />;

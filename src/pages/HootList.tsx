@@ -21,7 +21,7 @@ export default function HootIndex() {
         .filter((item) =>
           DATES.includes(getDate(item.date).toLocaleDateString("en-CA")),
         )
-        .map((p, i) => ({ ...p, completed: i === 0 ? false : p.completed }));
+        .map((p, i) => ({ ...p, completed: false, demo: true }));
     };
 
     let prompts = [];
@@ -76,6 +76,7 @@ export default function HootIndex() {
           characterImg={getCharacterImage(p.character.name, p.completed)}
           completed={p.completed}
           isToday={i === 0}
+          isDemo={p.demo}
         />
       ))}
     </Layout>
