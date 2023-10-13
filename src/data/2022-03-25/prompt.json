@@ -47,25 +47,25 @@
       "character-2": {
         "username": "Junior",
         "name": "Junior",
-        "picture": "images/avatars/junior.svg",
+        "picture": "/images/avatars/junior.svg",
         "privacySettings": []
       },
       "character-3": {
         "username": "Eddy",
         "name": "Eddy",
-        "picture": "images/avatars/eddy.svg",
+        "picture": "/images/avatars/eddy.svg",
         "privacySettings": []
       },
       "character-7": {
         "username": "Bea",
         "name": "Bea",
-        "picture": "images/avatars/bea.svg",
+        "picture": "/images/avatars/bea.svg",
         "privacySettings": []
       }
     }
   },
   "promptActive": true,
-  "characterAvatar": "images/avatars/lin.svg",
+  "characterAvatar": "/images/avatars/lin.svg",
   "starterPhrases": ["J'aime voyager pour", "Je n'aime pas voyager"],
   "xpToBeAwarded": 10
 }

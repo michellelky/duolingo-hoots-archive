@@ -13,7 +13,11 @@ export default function AudioButton({
 }: AudioButtonProps) {
   return (
     <S.ControlButton onClick={onClick}>
-      <S.PlayIcon src="images/speaker-icon.svg" size={size} active={active} />
+      <S.PlayIcon
+        src={`${process.env.PUBLIC_URL}/images/speaker-icon.svg`}
+        size={size}
+        active={active}
+      />
     </S.ControlButton>
   );
 }

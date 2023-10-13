@@ -16,7 +16,7 @@ export default function MissedItem({
       <S.MissedListItem to={`session/${dateObj.toLocaleDateString("en-CA")}`}>
         <S.ContentItem>
           <S.Row>
-            <S.StatusIcon src={`images/missed_cross.svg`} alt="missed" />
+            <S.StatusIcon src={`${process.env.PUBLIC_URL}/images/missed_cross.svg`} alt="missed" />
             <S.Description>Missed</S.Description>
           </S.Row>
           <S.Title>{question}</S.Title>

@@ -47,25 +47,25 @@
       "character-1": {
         "username": "Zari",
         "name": "Zari",
-        "picture": "images/avatars/zari.svg",
+        "picture": "/images/avatars/zari.svg",
         "privacySettings": []
       },
       "character-4": {
         "username": "Oscar",
         "name": "Oscar",
-        "picture": "images/avatars/oscar.svg",
+        "picture": "/images/avatars/oscar.svg",
         "privacySettings": []
       },
       "character-8": {
         "username": "Lin",
         "name": "Lin",
-        "picture": "images/avatars/lin.svg",
+        "picture": "/images/avatars/lin.svg",
         "privacySettings": []
       }
     }
   },
   "promptActive": true,
-  "characterAvatar": "images/avatars/junior.svg",
+  "characterAvatar": "/images/avatars/junior.svg",
   "starterPhrases": ["Non, parce que", "Je voudrais être célèbre"],
   "xpToBeAwarded": 10
 }

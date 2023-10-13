@@ -27,7 +27,10 @@ export default function ProgressBar({
   return (
     <S.Row>
       <S.Button onClick={onClose}>
-        <img src={`images/mobile-close-button.svg`} alt="close" />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/mobile-close-button.svg`}
+          alt="close"
+        />
       </S.Button>
       <S.BaseBar>
         <S.Progress percent={getPercentage()} />

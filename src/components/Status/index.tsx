@@ -8,7 +8,7 @@ interface StatusProps {
 export default function Status({ label, success = true }: StatusProps) {
   return (
     <S.StatusContainer>
-      <S.StatusIcon src={`images/ribbon-check.svg`} alt="check" />
+      <S.StatusIcon src={`${process.env.PUBLIC_URL}/images/ribbon-check.svg`} alt="check" />
       <S.StatusText isSuccess={success}>{label}</S.StatusText>
     </S.StatusContainer>
   );

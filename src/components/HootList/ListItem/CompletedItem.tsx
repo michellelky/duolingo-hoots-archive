@@ -33,7 +33,7 @@ export default function CompletedItem({
           <S.ContentItem>
             <S.Row>
               <S.StatusIcon
-                src={`images/completed_check.svg`}
+                src={`${process.env.PUBLIC_URL}/images/completed_check.svg`}
                 alt="completed"
               />
               <S.Description>Completed</S.Description>

@@ -21,7 +21,7 @@ export default function DialogBubble({
   return (
     <S.VisibleWrapper visible={visible}>
       <S.DialogContainer>
-        <S.Avatar src={avatar} />
+        <S.Avatar src={`${process.env.PUBLIC_URL}${avatar}`} />
 
         <S.Bubble>
           {!!audioUrl && <AudioButton active={active} onClick={play} />}
