@@ -51,7 +51,13 @@ export default function HootIndex() {
 
   const getDate = (dateObj: { date: number; month: number; year: number }) => {
     const { date, month, year } = dateObj;
-    const promptDate = new Date(`${year}-${month}-${date}`);
+
+    const convertFormat = (val: number) => {
+      return val.toString().length === 1 ? `0${val}` : val;
+    };
+    const promptDate = new Date(
+      `${year}-${convertFormat(month)}-${convertFormat(date)}`,
+    );
     return promptDate;
   };
 
